@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/background_primary">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_person" />
+
+
+        <!--    <TextView-->
+        <!--        android:id="@+id/pagedecleration"-->
+        <!--        android:layout_width="0dp"-->
+        <!--        android:layout_height="60dp"-->
+        <!--        android:layout_marginStart="32dp"-->
+        <!--        android:layout_marginEnd="32dp"-->
+        <!--        android:gravity="center"-->
+        <!--        android:padding="16dp"-->
+        <!--        android:text="أصم أبكم"-->
+        <!--        android:textColor="@color/white"-->
+        <!--        android:textSize="20dp"-->
+        <!--        android:textStyle="bold"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintHorizontal_bias="0.0"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toBottomOf="@+id/imageView" />-->
+
+        <AutoCompleteTextView
+            android:id="@+id/nameDeafMute"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableEnd="@drawable/ic_name"
+            android:drawablePadding="16dp"
+            android:ems="10"
+            android:hint="الاسم"
+            android:inputType="text"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"  />
+
+        <AutoCompleteTextView
+            android:id="@+id/ageDeafMute"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableEnd="@drawable/age"
+            android:drawablePadding="16dp"
+            android:ems="10"
+            android:hint="العمر"
+            android:inputType="textPersonName"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameDeafMute" />
+
+        <!--    <TextView-->
+        <!--        android:id="@+id/bloodType"-->
+        <!--        android:layout_width="0dp"-->
+        <!--        android:layout_height="50dp"-->
+        <!--        android:layout_marginStart="32dp"-->
+        <!--        android:layout_marginTop="12dp"-->
+        <!--        android:layout_marginEnd="32dp"-->
+        <!--        android:background="@drawable/round_border"-->
+        <!--        android:drawableEnd="@drawable/ic_lock_"-->
+        <!--        android:drawablePadding="16dp"-->
+        <!--        android:text="فصيلة الدم"-->
+        <!--        android:padding="16dp"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toBottomOf="@+id/ageDeafMute" />-->
+
+
+        <AutoCompleteTextView
+            android:id="@+id/bloodType"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableEnd="@drawable/drop"
+            android:drawablePadding="16dp"
+            android:ems="10"
+            android:hint="فصيلة الدم"
+            android:inputType="textPersonName"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ageDeafMute" />
+
+
+        <!--    <RadioGroup-->
+        <!--        android:id="@+id/B"-->
+        <!--        android:layout_width="0dp"-->
+        <!--        android:layout_height="50dp"-->
+        <!--        android:layout_marginTop="12dp"-->
+        <!--        android:layout_marginEnd="32dp"-->
+        <!--        android:background="@color/white"-->
+        <!--        app:layout_constraintTop_toBottomOf="@+id/bloodType"-->
+        <!--        tools:layout_editor_absoluteX="303dp"-->
+        <!--        tools:ignore="MissingConstraints">-->
+
+        <!--        <RadioButton-->
+        <!--            android:id="@+id/A"-->
+        <!--            android:text="A"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_marginStart="32dp"-->
+        <!--            android:layout_marginTop="12dp"-->
+        <!--            android:layout_marginEnd="32dp"-->
+        <!--            android:background="@drawable/round_border"-->
+        <!--            android:drawablePadding="16dp"-->
+        <!--            android:textSize="16sp" />-->
+
+        <!--        <RadioButton-->
+        <!--            android:id="@+id/B"-->
+        <!--            android:text="B"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_marginStart="32dp"-->
+        <!--            android:layout_marginTop="12dp"-->
+        <!--            android:layout_marginEnd="32dp"-->
+        <!--            android:background="@drawable/round_border"-->
+        <!--            android:drawablePadding="16dp"-->
+        <!--            android:textSize="16sp"-->
+        <!--            tools:ignore="DuplicateIds" />-->
+
+
+        <!--    </RadioGroup>-->
+
+        <AutoCompleteTextView
+            android:id="@+id/emailDeafMute"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableEnd="@drawable/ic_lock_"
+            android:drawablePadding="16dp"
+            android:ems="10"
+            android:hint="البريد الإلكتروني"
+            android:inputType="textWebEmailAddress"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bloodType" />
+
+        <EditText
+            android:id="@+id/inputPasswordDeafMute"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableEnd="@drawable/ic_lock_"
+            android:drawablePadding="16dp"
+            android:ems="10"
+            android:hint=" كلمة السر"
+            android:inputType="textPassword"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emailDeafMute" />
+
+        <EditText
+            android:id="@+id/conferminputPasswordDeafMute"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableEnd="@drawable/ic_lock_"
+            android:drawablePadding="16dp"
+            android:ems="10"
+            android:hint="تأكيد كلمة السر"
+            android:inputType="textPassword"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputPasswordDeafMute" />
+
+
+        <Button
+            android:id="@+id/btnLoginDeafMute"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/round_bg"
+            android:text="تسجيل الدخول"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/conferminputPasswordDeafMute" />
+
+        <Button
+            android:id="@+id/btnregisterDeafMute"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/round_bg"
+            android:text="إنشاء حساب"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/conferminputPasswordDeafMute" />
+
+        <ProgressBar
+            android:id="@+id/progresBarDeafMute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@null"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            android:elevation="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:indeterminateTint="@color/cyn"
+            android:indeterminateTintMode="src_atop"
+            android:visibility="gone"/>
+
+
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/logoBottom"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:background="@null"-->
+<!--            android:clickable="true"-->
+<!--            app:srcCompat="@drawable/logo_back"-->
+<!--            tools:ignore="MissingConstraints"-->
+<!--            tools:layout_editor_absoluteX="16dp"-->
+<!--            tools:layout_editor_absoluteY="550dp" />-->
+<!--        <RelativeLayout>-->
+<!--            <BunchOfViews/>-->
+<!--            <ImageView android:layout_alignParentBottom="true"/>-->
+<!--        </RelativeLayout>-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/homeSignUpDeafMute"
+                android:layout_marginTop="530dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@null"
+                android:clickable="true"
+                app:srcCompat="@drawable/logo_back"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

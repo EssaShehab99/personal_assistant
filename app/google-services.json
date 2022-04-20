@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "353025089020",
+    "project_id": "newforyou-882fa",
+    "storage_bucket": "newforyou-882fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353025089020:android:25e1ecf90497f3b941a679",
+        "android_client_info": {
+          "package_name": "com.example.newforyou"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353025089020-b0sjmqh229cq9bte2csj4v7q9pv7qpe1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDya6PcXE2ulxAonqrgUnZnrmErHnT3sOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "353025089020-b0sjmqh229cq9bte2csj4v7q9pv7qpe1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

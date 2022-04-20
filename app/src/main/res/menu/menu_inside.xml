@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="end"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layoutDirection="rtl"
+    android:layout_gravity="end">
+
+    <!--    <group android:checkableBehavior="single"-->
+    <!--        android:layout_gravity="end"-->
+    <!--        android:gravity="end">-->
+
+    <item
+        android:title="shareApp"
+        android:id="@+id/shareApp"
+        android:icon="@drawable/shar"
+        app:showAsAction="always" />
+
+    <item
+        android:title="logo"
+        android:id="@+id/logoPrimary"
+        android:icon="@drawable/logo_primary"
+        app:showAsAction="always" />
+    <item
+        android:title="Favorite"
+        android:id="@+id/favorite"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        app:showAsAction="always" />
+    <item
+        android:title="Search"
+        android:id="@+id/search_bar"
+        android:icon="@drawable/search_24"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="android.widget.SearchView" />
+
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_baseline_favorite_border_24"
+        android:title="الصفحة الرئيسية          "
+        app:showAsAction="never|ifRoom|collapseActionView|withText" />
+
+
+    <item
+        android:id="@+id/editD"
+        android:title="الصفحة الشخصية        "
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/learn_sign"
+        android:title="تعلم لغة الاشارة           " />
+
+    <item
+        android:id="@+id/logout"
+        android:title="تسجيل الخروج           " />
+
+
+
+
+    <!--    </group>-->
+
+</menu>

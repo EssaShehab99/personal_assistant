@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_primary">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<!--    <ImageView-->
+<!--        android:id="@+id/uploadImageL"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="110dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:srcCompat="@drawable/ic_person" />-->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardUploadImageD"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:cardCornerRadius="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:backgroundTint="@color/purple_dark">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/uploadImageL"
+                android:layout_width="match_parent"
+                app:civ_border_color="@android:color/black"
+                app:civ_border_width="1dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/ic_person" />
+        </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/pagedeclerationL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="الصفحة الشخصية"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="104dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardUploadImageD"/>
+
+    <EditText
+        android:id="@+id/nameL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/editpagescorners"
+        android:hint="الإسم"
+        android:drawableStart="@drawable/edit"
+        android:drawableEnd="@drawable/ic_name"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:inputType="text"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pagedeclerationL" />
+
+    <EditText
+        android:id="@+id/emailL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/editpagescorners"
+        android:drawableEnd="@drawable/ic_baseline_email_24"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="الإيميل"
+        android:inputType="textEmailAddress"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameL" />
+
+
+    <Button
+        android:id="@+id/btnSaveL"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/editpagescorners"
+        android:text="حفظ"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailL" />
+
+    <Button
+        android:id="@+id/btnDeleteL"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/editpagescorners"
+        android:text="حذف الحساب"
+        android:textColor="#B22222	"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailL" />
+
+    <TextView
+        android:id="@+id/resetpasswordL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:drawablePadding="16dp"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="إعادة تعيين كلمة السر"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDeleteL" />
+    <ProgressBar
+        android:id="@+id/progressBarEditL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@null"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        android:padding="3dp"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:indeterminateTint="@color/cyn"
+        android:indeterminateTintMode="src_atop"
+        android:visibility="gone"/>
+
+<!--    <ImageView-->
+<!--        android:id="@+id/homeLearnerEdit"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:background="@null"-->
+<!--        android:clickable="true"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:srcCompat="@drawable/logo_back" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/homeLearnerEdit"
+                android:layout_marginTop="530dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@null"
+                android:clickable="true"
+                app:srcCompat="@drawable/logo_back"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

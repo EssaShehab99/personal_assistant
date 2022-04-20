@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.newforyou">
+    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
+    <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
+    <!-- <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> -->
+    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ForYou">
+        <activity
+            android:name=".FavoriteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Nearby_Places"
+            android:exported="true" />
+        <activity
+            android:name=".Change_Password"
+            android:exported="true" />
+        <activity
+            android:name=".ForgetPassword"
+            android:exported="true"
+            android:parentActivityName=".Login_Page" />
+        <activity
+            android:name=".Sign_Up_Deaf_Mute"
+            android:exported="true"
+            android:parentActivityName=".Who_Are_You_Page" />
+        <activity
+            android:name=".Learner_Edit_Profile"
+            android:exported="true"
+            android:parentActivityName=".Main_category" />
+        <activity
+            android:name=".Sign_Up_Learner_Page"
+            android:exported="true"
+            android:parentActivityName=".Who_Are_You_Page" />
+        <activity
+            android:name=".Who_Are_You_Page"
+            android:exported="true"
+            android:parentActivityName=".Main_category"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".DeafMute_Edit_Profile"
+            android:exported="true"
+            android:parentActivityName=".Main_category" />
+        <activity
+            android:name=".Login_Page"
+            android:exported="true"
+            android:parentActivityName=".Who_Are_You_Page" />
+        <activity
+            android:name=".Main_category"
+            android:exported="true" />
+        <activity
+            android:name=".Welcome_Video"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Hospital_Cat"
+            android:parentActivityName=".Main_category" />
+        <activity
+            android:name=".Restraint_Cat"
+            android:parentActivityName=".Main_category" />
+        <activity
+            android:name=".Coffee_Cat"
+            android:parentActivityName=".Main_category" />
+        <activity
+            android:name=".Airport_Cat"
+            android:parentActivityName=".Main_category" />
+        <activity
+            android:name=".SuperMarket_Cat"
+            android:parentActivityName=".Main_category" />
+        <activity android:name=".Google_SignIn" />
+        <activity android:name=".Edit_Profile_GoogleSignIn" />
+        <activity
+            android:name=".Learrn_Sign_Language"
+            android:parentActivityName=".Main_category" />
+
+        <service
+            android:name=".PushNotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="API_KEY" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

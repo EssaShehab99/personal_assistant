@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple"
+    tools:context=".Login_Page">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+    <ImageView
+        android:id="@+id/iconView"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_back" />
+
+    <TextView
+        android:id="@+id/Foryou"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="لأجلكم"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iconView" />
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:foregroundGravity="center_horizontal"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="16dp"
+        android:padding="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Foryou">
+    <VideoView
+        android:id="@+id/welcomeVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+      />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/skipVideo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:drawableTop="@drawable/skip_purp"
+        android:background="@null"
+        android:text="تخطي"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame" />
+
+<!--    </ScrollView>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".Main_category"-->
+<!--    android:background="@drawable/background_primary">-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/iconView"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/Foryou"-->
+<!--        app:layout_constraintDimensionRatio="1:1"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/guideline2"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="@id/guideline"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:srcCompat="@drawable/logo_primary" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/Foryou"-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:gravity="center"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:text="لأجلكم"-->
+<!--        android:textSize="40dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/welcomeVideo"-->
+<!--        app:layout_constraintDimensionRatio="1:1"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/guideline2"-->
+<!--        app:layout_constraintHorizontal_bias="0.538"-->
+<!--        app:layout_constraintStart_toStartOf="@id/guideline"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/iconView"-->
+<!--        />-->
+
+
+<!--    <VideoView-->
+<!--        android:id="@+id/welcomeVideo"-->
+<!--        android:layout_width="300dp"-->
+<!--        android:layout_height="300dp"-->
+<!--        android:paddingTop="90dp"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:gravity="center"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/skipVideo"-->
+<!--        app:layout_constraintDimensionRatio="1:1"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/guideline2"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="@id/guideline"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/Foryou"-->
+<!--        android:paddingRight="30dp"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/skipVideo"-->
+<!--        android:layout_width="70dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:background="@null"-->
+<!--        android:drawableTop="@drawable/ic_skip"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:text="تخطي"-->
+<!--        android:textSize="20dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintDimensionRatio="1:1"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/guideline2"-->
+<!--        app:layout_constraintHorizontal_bias="0.517"-->
+<!--        app:layout_constraintStart_toStartOf="@id/guideline"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/welcomeVideo" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintGuide_percent="0.14" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintGuide_percent="0.88" />-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--</ScrollView>-->
