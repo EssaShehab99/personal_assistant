@@ -163,7 +163,6 @@ public class Adapter_Inside_Cat extends RecyclerView.Adapter<Adapter_Inside_Cat.
         holder.title.setText(titles.get(position));
         holder.gridIcon.setImageResource(images.get(position));
         favoritos(holder, position, false);
-
         if (authProfileLogin.getCurrentUser() != null) {
         }
         holder.favInsideDB.setOnClickListener(v -> {

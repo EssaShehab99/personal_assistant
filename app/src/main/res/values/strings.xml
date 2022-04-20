@@ -13,4 +13,5 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="web_client_id" translatable="false">353025089020-b0sjmqh229cq9bte2csj4v7q9pv7qpe1.apps.googleusercontent.com</string>
+    <string name="todo">TODO</string>
 </resources>

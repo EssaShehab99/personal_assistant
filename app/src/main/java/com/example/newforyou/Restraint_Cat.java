@@ -31,6 +31,7 @@ public class Restraint_Cat extends Hospital_Cat {
         btnSpeak = (ImageButton) findViewById(R.id.convertToVoice);
         favWordDB = (Button) findViewById(R.id.favorite_word);
         //  Main_category A = new Main_category();
+        favWordDB.setOnClickListener(view -> addFavWord(setTextToConvert.getText().toString()));
 
 
 //        Adapter_Inside_Cat A = new Adapter_Inside_Cat();

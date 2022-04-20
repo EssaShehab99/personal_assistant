@@ -50,7 +50,7 @@ public class Hospital_Cat extends AppCompatActivity {
     public static ImageButton btnSpeak;
     public static Button favWordDB;
     final int TTS_APP_VERSION = 210349294;
-    FirebaseAuth authProfileLogin;
+
     static FirebaseAuth mAuth;
 
     int count = 2;
@@ -79,7 +79,6 @@ public class Hospital_Cat extends AppCompatActivity {
         setTextToConvert = (EditText) findViewById(R.id.setTextToConvert);
         btnSpeak = (ImageButton) findViewById(R.id.convertToVoice);
         favWordDB = (Button) findViewById(R.id.favorite_word);
-        authProfileLogin = FirebaseAuth.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
         setImgInfo();
@@ -102,7 +101,7 @@ public class Hospital_Cat extends AppCompatActivity {
 
         // هذي الاون كليك الي لما يضغط على القلب الي جنب النص عشان يضيف جملة كاملة للمفضلة
 
-        favWordDB.setOnClickListener(view -> addFavWord());
+        favWordDB.setOnClickListener(view -> addFavWord(setTextToConvert.getText().toString()));
 
 
         //convertTextToVoice();
@@ -282,8 +281,8 @@ public class Hospital_Cat extends AppCompatActivity {
     // هذي الميثود الي لما يضغط على القلب الي جنب النص عشان يضيف جملة كاملة للمفضلة
     // الميثود حطيتها برا عشان يقدر يوصل لها من باقي الكلاسات الي وارثة منها وعرفت البوتن فوق ستاتيك عشان يشوفها
 
-    public void addFavWord() {
-        String editTextToConvert = setTextToConvert.getText().toString();
+    public static void addFavWord(String editTextToConvert) {
+        FirebaseAuth authProfileLogin = FirebaseAuth.getInstance();
         if (authProfileLogin.getCurrentUser() != null) {
 
                 if (editTextToConvert.isEmpty()) {

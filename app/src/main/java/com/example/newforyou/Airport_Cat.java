@@ -55,6 +55,7 @@ public class Airport_Cat extends Hospital_Cat {
         setTextToConvert = (EditText) findViewById(R.id.setTextToConvert);
         btnSpeak = (ImageButton) findViewById(R.id.convertToVoice);
         favWordDB = (Button) findViewById(R.id.favorite_word);
+        favWordDB.setOnClickListener(view -> addFavWord(setTextToConvert.getText().toString()));
 
 
         setImgInfo();
@@ -62,20 +63,7 @@ public class Airport_Cat extends Hospital_Cat {
 
         // هذي الاون كليك الي لما يضغط على القلب الي جنب النص عشان يضيف جملة كاملة للمفضلة
 
-        favWordDB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addFavWord();
-            }
 
-//            public void addFavWord() {
-//
-//                favWordDB.setBackgroundResource(R.drawable.ic_baseline_favorite_24);
-//
-//                Toast.makeText(favWordDB.getContext(), "add", Toast.LENGTH_SHORT).show();
-//
-//            }
-        });
 
         btnSpeak.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -230,20 +218,6 @@ public class Airport_Cat extends Hospital_Cat {
     // هذي الميثود الي لما يضغط على القلب الي جنب النص عشان يضيف جملة كاملة للمفضلة
     // الميثود حطيتها برا عشان يقدر يوصل لها من باقي الكلاسات الي وارثة منها وعرفت البوتن فوق ستاتيك عشان يشوفها
 
-    public void addFavWord() {
-        String editTextToConvert = setTextToConvert.getText().toString();
-
-
-        if (editTextToConvert.isEmpty()) {
-            Toast.makeText(favWordDB.getContext(), "Please Enter Text", Toast.LENGTH_SHORT).show();
-        } else {
-
-            favWordDB.setBackgroundResource(R.drawable.ic_baseline_favorite_24);
-
-            Toast.makeText(favWordDB.getContext(), "Add To Favorite", Toast.LENGTH_SHORT).show();
-        }
-
-    }
 
 
     // End Menu Bar
