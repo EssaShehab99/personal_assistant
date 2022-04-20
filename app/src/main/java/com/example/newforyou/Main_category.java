@@ -224,6 +224,16 @@ public class Main_category extends AppCompatActivity {
             }
 
         }
+        if (item_id == R.id.linear_favorite) {
+            if(FirebaseAuth.getInstance().getCurrentUser()!=null){
+                Intent i = new Intent(getApplicationContext(), LinearFavoriteActivity.class);
+                startActivity(i);
+            }else {
+                Toast.makeText(this, "يجب عليك تسجيل الدخول للوصول الى المفضلة ", Toast.LENGTH_SHORT).show();
+
+            }
+
+        }
 
         if (item_id == R.id.logoPrimary) {
             Intent i = new Intent(getApplicationContext(), Main_category.class);

@@ -11,7 +11,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
@@ -30,6 +32,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,13 +45,15 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
 import android.view.KeyEvent;
 
 
 public class Adapter_Learrn_Sign_Language extends RecyclerView.Adapter<Adapter_Learrn_Sign_Language.viewHolder>{
     // there declared ArrayList
     // to pass data from activity_main.xml to custom_grid_layout.xml
-    public List<String> titles;
+    public static List<String> titles;
     public List<Integer> images;
     public Context context;
     public LayoutInflater inflater;
@@ -98,6 +103,47 @@ public class Adapter_Learrn_Sign_Language extends RecyclerView.Adapter<Adapter_L
 
 
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public static void favoritos(Adapter_Learrn_Sign_Language.viewHolder holder, int pos, boolean isClick) {
+
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        final DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Registered User").child(Objects.requireNonNull(mAuth.getUid())).child("linearFavorite");
+        if (isClick) {
+            ref.get().addOnSuccessListener(dataSnapshot -> {
+                if (dataSnapshot.exists()) {
+                    if (dataSnapshot.hasChild(pos + "-" + titles.get(pos))) {
+                        ref.child(pos + "-" + titles.get(pos)).removeValue();
+                        holder.favInsideDB.setBackgroundResource(R.drawable.ic_baseline_favorite_border_24);
+
+                    } else {
+                        ref.child(pos + "-" + titles.get(pos)).setValue(titles.get(pos));
+                        holder.favInsideDB.setBackgroundResource(R.color.purple);
+                        holder.favInsideDB.setBackgroundResource(R.drawable.ic_baseline_favorite_24);
+
+                    }
+                } else {
+                    ref.child(pos + "-" + titles.get(pos)).setValue(titles.get(pos));
+                    holder.favInsideDB.setBackgroundResource(R.color.purple);
+                    holder.favInsideDB.setBackgroundResource(R.drawable.ic_baseline_favorite_24);
+
+                }
+            });
+
+
+        } else
+            ref.get().addOnSuccessListener(dataSnapshot -> {
+                if (dataSnapshot.exists()) {
+                    Log.d("ddddddddddddddddddd ", String.valueOf(dataSnapshot.hasChild(pos + "-" + titles.get(pos))));
+                    if (dataSnapshot.hasChild(pos + "-" + titles.get(pos))) {
+                        holder.favInsideDB.setBackgroundResource(R.color.purple);
+                        holder.favInsideDB.setBackgroundResource(R.drawable.ic_baseline_favorite_24);
+                    }
+                } else {
+                    holder.favInsideDB.setBackgroundResource(R.drawable.ic_baseline_favorite_border_24);
+                }
+            });
+
+    }
 
     @NonNull
     @Override
@@ -112,14 +158,24 @@ public class Adapter_Learrn_Sign_Language extends RecyclerView.Adapter<Adapter_L
     //  this data come from ArrayList (declared inAdapter_Inside_Cat) inside it more than category
     @Override
     public void onBindViewHolder(@NonNull Adapter_Learrn_Sign_Language.viewHolder holder, @SuppressLint("RecyclerView") int position) {
+        authProfileLogin = FirebaseAuth.getInstance();
 
         this.position = position;
         holder.title.setText(titles.get(position) );
         holder.gridIcon.setImageResource(images.get(position));
         // To prevent RecyclerView from recycling some items
         holder.setIsRecyclable(false);
+        favoritos(holder, position, false);
 
+        holder.favInsideDB.setOnClickListener(v -> {
 
+            if (authProfileLogin.getCurrentUser() != null) {
+                favoritos(holder, position, true);
+            } else {
+                Toast.makeText(holder.favInsideDB.getContext(), "يجب عليك إنشاء حساب حتى تسطيع إضافة العنصر الى المفضلة ", Toast.LENGTH_SHORT).show();
+            }
+
+        });
 
 
 
@@ -421,25 +477,7 @@ public class Adapter_Learrn_Sign_Language extends RecyclerView.Adapter<Adapter_L
 //            });
 
 
-            // هذي الاون كليك عشلن لما يضغط على اي قلب موجود على الصور الي داخل كل كاتيجوري
-            itemView.findViewById(R.id.favBtnl2).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
 
-                    authProfileLogin = FirebaseAuth.getInstance();
-
-                    if (authProfileLogin.getCurrentUser() != null) {
-
-                        //favBtn.setBackgroundResource(R.color.purple);
-                        favInsideDB.setBackgroundResource(R.drawable.ic_baseline_favorite_24);
-                        Toast.makeText(favInsideDB.getContext(), "تم إضافة العنصر الى المفضلة", Toast.LENGTH_SHORT).show();
-                    }else {
-                        Toast.makeText(favInsideDB.getContext(), "يجب عليك إنشاء حساب حتى تسطيع إضافة العنصر الى المفضلة ", Toast.LENGTH_SHORT).show();
-
-                    }
-
-                }
-            });
         }
 
 
