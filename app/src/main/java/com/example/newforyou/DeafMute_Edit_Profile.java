@@ -104,8 +104,8 @@ public class DeafMute_Edit_Profile extends Users {
         firebaseUser = authProfile.getCurrentUser();
         storageReference = FirebaseStorage.getInstance().getReference("PicturesProfile");
 
-        Uri uri = firebaseUser.getPhotoUrl();
-        Picasso.with(DeafMute_Edit_Profile.this).load(uri).into(uploadImageD);
+//        Uri uri = firebaseUser.getPhotoUrl();
+//        Picasso.with(DeafMute_Edit_Profile.this).load(uri).into(uploadImageD);
 
         uploadImageD.setOnClickListener(new View.OnClickListener() {
             @Override

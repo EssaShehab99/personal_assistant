@@ -5,9 +5,12 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -25,19 +28,28 @@ public class FavoriteActivity extends AppCompatActivity{
     FavoriteAdapter favoriteAdapter;
     List<String> favoriteList = new ArrayList<>();
     ArabicTTS  tts ;
+    @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorite);
+
+        EditText setTextToConvert= findViewById(R.id.setTextToConvert);
         tts = new ArabicTTS();
         tts.prepare(this);
         fetchFavorite();
         favoriteAdapter=new FavoriteAdapter(this,favoriteList);
         recyclerView = findViewById(R.id.favorite_recyclerview);
         favoriteAdapter.setOnItemClickListener((position, v) -> {
-            if(!favoriteList.get(position).equals("")){
-                tts.talk(favoriteList.get(position));
+//            if(!favoriteList.get(position).equals("")){
+//                tts.talk(favoriteList.get(position));
+//            }
+            setTextToConvert.setText(setTextToConvert.getText().toString()+" "+favoriteList.get(position));
+        });
+        findViewById(R.id.convertToVoice).setOnClickListener(v-> {
+            if(!setTextToConvert.getText().toString().isEmpty()){
+                tts.talk(setTextToConvert.getText().toString());
             }
         });
         favoriteAdapter.setOnFavoriteClickListener((position, v) -> {

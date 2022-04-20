@@ -233,7 +233,6 @@ public class Adapter_Inside_Cat extends RecyclerView.Adapter<Adapter_Inside_Cat.
 //                        favoritos();
 //                    } else {
 //                        Toast.makeText(favInsideDB.getContext(), "يجب عليك إنشاء حساب حتى تسطيع إضافة العنصر الى المفضلة ", Toast.LENGTH_SHORT).show();
-//
 //                    }
 
                 }

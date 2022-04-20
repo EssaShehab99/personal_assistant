@@ -53,7 +53,7 @@ public class Adapter_Learrn_Sign_Language extends RecyclerView.Adapter<Adapter_L
     public Context context;
     public LayoutInflater inflater;
     List<String> categoryListAll;
-//    public static ScaleGestureDetector scaleGestureDetector;
+    //    public static ScaleGestureDetector scaleGestureDetector;
 //    public static float mScaleFactor = 1.0f;
 //    String[] titles;
     public static FirebaseAuth authProfileLogin; // عرفته ستاتيك عشان يقدر يشوفها في الميود الي تحت
@@ -153,19 +153,19 @@ public class Adapter_Learrn_Sign_Language extends RecyclerView.Adapter<Adapter_L
 
 
 
-                 Uri imageUri;
-                 Intent intent;
+                Uri imageUri;
+                Intent intent;
 
                 imageUri = Uri.parse("android.resource://" + context.getPackageName()
                         + "/drawable/" + "ic_launcher");
 
                 intent = new Intent(Intent.ACTION_SEND);
-               //text
+                //text
                 intent.putExtra(Intent.EXTRA_TEXT, "Hello");
-               //image
+                //image
                 intent.putExtra(Intent.EXTRA_STREAM, imageUri);
-               //type of things
-                intent.setType("*/*");
+                //type of things
+                intent.setType("/");
                 //sending
                 context.startActivity(intent);
 
@@ -179,7 +179,7 @@ public class Adapter_Learrn_Sign_Language extends RecyclerView.Adapter<Adapter_L
 //                shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 //                context.startActivity(Intent.createChooser(shareIntent, "send"));
 
-                  //Share RecycleView
+                //Share RecycleView
 //                Intent intent = new Intent(Intent.ACTION_SEND);
 //                    intent.putExtra(Intent.EXTRA_TEXT, "Let's go for a trip to "
 //                            + titles.get(holder.getAdapterPosition()) +
@@ -201,7 +201,7 @@ public class Adapter_Learrn_Sign_Language extends RecyclerView.Adapter<Adapter_L
 
         // هذي الاون كليك عشان لما يضغط على اي صورة جوا الكاتيجوري ياخذ النص الي جواها ويحطه في الاديت تيكست
         holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @SuppressLint("SetJavaScriptEnabled")
+            //            @SuppressLint("SetJavaScriptEnabled")
             @Override
             public  void onClick(View view) {
 
@@ -396,9 +396,9 @@ public class Adapter_Learrn_Sign_Language extends RecyclerView.Adapter<Adapter_L
 
         public viewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.textView2);
-            gridIcon = itemView.findViewById(R.id.imageView2);
-            favInsideDB = itemView.findViewById(R.id.favBtn2);
+            title = itemView.findViewById(R.id.textViewl2);
+            gridIcon = itemView.findViewById(R.id.imageViewl2);
+            favInsideDB = itemView.findViewById(R.id.favBtnl2);
             btnShare = itemView.findViewById(R.id.btnShare);
 //            gridIcon.setOnTouchListener((View.OnTouchListener) this);
 
@@ -422,7 +422,7 @@ public class Adapter_Learrn_Sign_Language extends RecyclerView.Adapter<Adapter_L
 
 
             // هذي الاون كليك عشلن لما يضغط على اي قلب موجود على الصور الي داخل كل كاتيجوري
-            itemView.findViewById(R.id.favBtn2).setOnClickListener(new View.OnClickListener() {
+            itemView.findViewById(R.id.favBtnl2).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
@@ -449,5 +449,3 @@ public class Adapter_Learrn_Sign_Language extends RecyclerView.Adapter<Adapter_L
 
 
 }
-
-
